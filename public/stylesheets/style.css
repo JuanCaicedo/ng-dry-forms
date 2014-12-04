@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+input.ng-invalid.submitted{
+    border-width: 2px;
+    border-color: red;
+}
+
+.error-message{
+    color:red;
+}
+
+.ng-hide{
+    display: block!important;
+    visibility: hidden;
+}
