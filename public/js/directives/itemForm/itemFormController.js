@@ -21,7 +21,7 @@ angular.module('angular-dry-forms').controller('itemFormController', [
                     .success(function(data, status, headers, config) {
                         if (data) {
                             $scope.statusMessage = 'Your edits have been submitted';
-
+                            $scope.submitted = false;
                         } else {
                             alert(JSON.stringify(data));
                             deffered.reject(data, status, headers, config);

@@ -4,17 +4,16 @@ angular.module('angular-dry-forms', [
     .config([
         '$stateProvider',
         '$urlRouterProvider',
-        '$httpProvider',
         //Set up state provider
-        function ($stateProvider, $urlRouterProvider, $httpProvider) {
+        function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
             $stateProvider
-                .state('item', {
+                .state('createItem', {
                     url: '/',
                     templateUrl: '/partials/createItem.html'
                 });
             $stateProvider
-                .state('search', {
+                .state('editItem', {
                     url: '/edit',
                     templateUrl: '/partials/editItem.html'
                 });
