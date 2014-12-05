@@ -2,51 +2,9 @@
 <br/>
 <div
     ng-controller="createItemController">
-    <h1>Create Item</h1>
-
-    <form
-        name="createItemForm"
-        ng-submit="createItem(newItem)">
-        <h3 class="error-message"> {{statusMessage}} </h3>
-        <div
-            class="form-group">
-            <label>name</label>
-            <input
-                id="nameField"
-                name="nameField"
-                class="form-control"
-                ng-class="{'submitted': submitted}"
-                type="text"
-                ng-change="fieldsChanged = true"
-                required
-                ng-model="newItem.name"
-                placeholder="Item name"/>
-            <span
-                class="error-message"
-                ng-show="createItemForm.nameField.$invalid && submitted">A name is required</span>
-        </div>
-        <div
-            class="form-group">
-            <label>description</label>
-            <input
-                id="descriptionField"
-                name="descriptionField"
-                class="form-control"
-                ng-class="{'submitted': submitted}"
-                type="text"
-                ng-change="fieldsChanged = true"
-                required
-                ng-model="newItem.description"
-                placeholder="Item description"/>
-            <span
-                class="error-message"
-                ng-show="createItemForm.descriptionField.$invalid && submitted">A description is required</span>
-        </div>
-        <button
-            id="submitNew"
-            ng-disabled="!fieldsChanged"
-            type="submit"
-            ng-click="submitted = true">{{submitText}}
-        </button>
-    </form>
+     <item-form
+        submit-text="Create Item"
+        method="post">
+        <h1>Create Item</h1>
+    </item-form>
 </div>

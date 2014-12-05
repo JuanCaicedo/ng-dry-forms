@@ -1,0 +1,67 @@
+<div
+    ng-controller="itemFormController">
+    <div ng-transclude></div>
+    <h3 class="error-message"> {{statusMessage}} </h3>
+    <form
+        name="itemForm"
+        ng-submit="submit(itemForm)">
+        <div
+            class="form-group"
+            ng-if="method == 'put'">
+            <label>id</label>
+            <input
+                id="id"
+                name="id"
+                class="form-control"
+                ng-class="{'submitted': submitted}"
+                type="text"
+                ng-change="fieldsChanged = true"
+                required
+                ng-model="newItem._id"
+                placeholder="Item id"/>
+            <span
+                class="error-message"
+                ng-show="createItemForm._id.$invalid && submitted">An id is required</span>
+        </div> 
+        <div
+            class="form-group">
+            <label>name field</label>
+            <input
+                id="nameField"
+                name="nameField"
+                class="form-control"
+                ng-class="{'submitted': submitted}"
+                type="text"
+                ng-change="fieldsChanged = true"
+                required
+                ng-model="newItem.name"
+                placeholder="Item name"/>
+            <span
+                class="error-message"
+                ng-show="itemForm.nameField.$invalid && submitted">A name is required</span>
+        </div>
+        <div
+            class="form-group">
+            <label>description</label>
+            <input
+                id="descriptionField"
+                name="descriptionField"
+                class="form-control"
+                ng-class="{'submitted': submitted}"
+                type="text"
+                ng-change="fieldsChanged = true"
+                required
+                ng-model="newItem.description"
+                placeholder="Item description"/>
+            <span
+                class="error-message"
+                ng-show="itemForm.descriptionField.$invalid && submitted">A description is required</span>
+        </div>
+        <button
+            id="submitNew"
+            ng-disabled="!fieldsChanged"
+            type="submit"
+            ng-click="submitted = true">{{submitText}}
+        </button>
+    </form>
+</div>
